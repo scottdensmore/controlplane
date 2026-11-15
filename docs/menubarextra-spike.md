@@ -1,6 +1,6 @@
 # Spike: SwiftUI MenuBarExtra / Settings beside ObjC CPController (#138)
 
-Design-only. **No production SwiftUI menu-bar or Settings scene in this change.** Parent epic: [#116](https://github.com/scottdensmore/ControlPlane/issues/116). Related: [#100](https://github.com/scottdensmore/ControlPlane/issues/100) / `docs/prefs-settings-style-spike.md` (Settings chrome already chose AppKit).
+Design-only. **No production SwiftUI menu-bar or Settings scene in this change.** Parent epic: [#116](https://github.com/scottdensmore/controlplane/issues/116). Related: [#100](https://github.com/scottdensmore/controlplane/issues/100) / `docs/prefs-settings-style-spike.md` (Settings chrome already chose AppKit).
 
 ## Goal
 

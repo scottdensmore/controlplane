@@ -2,7 +2,7 @@
 
 Design-only. **Do not flip `com.apple.security.app-sandbox` in this change.** Current `main` stays unsandboxed until the enable-sandbox slice.
 
-**Parent:** award epic [#190](https://github.com/scottdensmore/ControlPlane/issues/190), store epic [#278](https://github.com/scottdensmore/ControlPlane/issues/278). This document is the explicit design CONTRIBUTING previously required before those issues could be filed.
+**Parent:** award epic [#190](https://github.com/scottdensmore/controlplane/issues/190), store epic [#278](https://github.com/scottdensmore/controlplane/issues/278). This document is the explicit design CONTRIBUTING previously required before those issues could be filed.
 
 **Does not replace:** [signing.md](signing.md) (helper topology), [swiftui-coexistence-spike.md](swiftui-coexistence-spike.md) (AppKit host + SwiftUI views), [nevpn-spike.md](nevpn-spike.md) (no NEVPNManager).
 

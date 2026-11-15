@@ -2,7 +2,7 @@
 
 # Spike: SMJobBless → SMAppService daemon (#125)
 
-Design-only. **No production helper migration in this change.** Parent epic: [#116](https://github.com/scottdensmore/ControlPlane/issues/116).
+Design-only. **No production helper migration in this change.** Parent epic: [#116](https://github.com/scottdensmore/controlplane/issues/116).
 
 ## Goal
 
