@@ -1,6 +1,6 @@
 # Contributing to ControlPlane
 
-Thanks for helping keep this ObjC / XIB fork working on modern macOS. Live work tracking is **GitHub Issues** on [scottdensmore/ControlPlane](https://github.com/scottdensmore/ControlPlane)—do not invent parallel roadmap docs.
+Thanks for helping keep this ObjC / XIB fork working on modern macOS. Live work tracking is **GitHub Issues** on [scottdensmore/controlplane](https://github.com/scottdensmore/controlplane)—do not invent parallel roadmap docs.
 
 This file is the instruction SSOT for contributors. Do not create `AGENTS.md`, `agent.md`, or parallel roadmap docs.
 
@@ -10,11 +10,11 @@ This file is the instruction SSOT for contributors. Do not create `AGENTS.md`, `
 
 **Helper / XPC:** the privileged helper is an `SMAppService` LaunchDaemon. Embedded `CPXPCService` is the XPC broker and does not call `SMJobBless`. See [docs/signing.md](docs/signing.md).
 
-Award-track UI coexistence (AppKit host + SwiftUI views, Swift 6): parent epic [#190](https://github.com/scottdensmore/ControlPlane/issues/190) and [docs/swiftui-coexistence-spike.md](docs/swiftui-coexistence-spike.md).
+Award-track UI coexistence (AppKit host + SwiftUI views, Swift 6): parent epic [#190](https://github.com/scottdensmore/controlplane/issues/190) and [docs/swiftui-coexistence-spike.md](docs/swiftui-coexistence-spike.md).
 
 ## Dual-stack UI (award track)
 
-ControlPlane migrates Settings and status-menu chrome to SwiftUI **without** rewriting the ObjC evidence → context → action loop. Follow the locked coexistence model in [docs/swiftui-coexistence-spike.md](docs/swiftui-coexistence-spike.md) and parent epic [#190](https://github.com/scottdensmore/ControlPlane/issues/190).
+ControlPlane migrates Settings and status-menu chrome to SwiftUI **without** rewriting the ObjC evidence → context → action loop. Follow the locked coexistence model in [docs/swiftui-coexistence-spike.md](docs/swiftui-coexistence-spike.md) and parent epic [#190](https://github.com/scottdensmore/controlplane/issues/190).
 
 | Rule | Detail |
 | :--- | :--- |
@@ -34,7 +34,7 @@ Thin vertical slices per prefs pane or menu section. Do not big-bang rewrite XIB
 
 ## Pick an issue
 
-1. Prefer open issues on the [award epic](https://github.com/scottdensmore/ControlPlane/issues/190) (or other open `agent-ready` issues). Optional `macos-16` labels are metadata only—not branch names.
+1. Prefer open issues on the [award epic](https://github.com/scottdensmore/controlplane/issues/190) (or other open `agent-ready` issues). Optional `macos-16` labels are metadata only—not branch names.
 2. Prefer issues also labeled **`agent-ready`**: they should include summary, evidence (paths), tasks, and acceptance criteria so another session can execute without chat history.
 3. One thin vertical slice per PR—smallest cohesive fix or feature that can be tested and reviewed alone.
 4. Prefer epics for multi-slice themes. Keep feature branches short-lived.

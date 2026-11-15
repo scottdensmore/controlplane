@@ -62,8 +62,8 @@
 
 - (void)testHelpLinksToThisForkNotUpstream {
     NSString *html = [self concatenatedHelpHTML];
-    XCTAssertTrue([html containsString:@"scottdensmore/ControlPlane"],
-                  @"Help should link to scottdensmore/ControlPlane");
+    XCTAssertTrue([html containsString:@"scottdensmore/controlplane"],
+                  @"Help should link to scottdensmore/controlplane");
     XCTAssertFalse([html containsString:@"dustinrue/ControlPlane"],
                    @"Help must not link to dustinrue/ControlPlane");
 }

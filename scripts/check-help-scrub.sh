@@ -8,8 +8,8 @@ HELP="$ROOT/Resources/ControlPlane Help"
 
 fail=0
 
-if ! grep -R -n -F 'scottdensmore/ControlPlane' "$HELP" >/dev/null; then
-  echo "ERROR: expected fork GitHub link scottdensmore/ControlPlane in Help" >&2
+if ! grep -R -n -F 'scottdensmore/controlplane' "$HELP" >/dev/null; then
+  echo "ERROR: expected fork GitHub link scottdensmore/controlplane in Help" >&2
   fail=1
 fi
 

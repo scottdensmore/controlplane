@@ -112,7 +112,7 @@ Unit contracts: `ControlPlaneTests/CPUITestHarnessTests` (#202), `ControlPlaneTe
 
 The shared scheme’s **Test** action uses PosixSpawn (no LLDB attach). That avoids “does not have a process ID” failures when launching the agent under `xcodebuild test`. `ControlPlaneUITests` also retries cold attach once or twice — the first launch after a clean DerivedData build can still race.
 
-**#244 closed:** the Force Context automation hook above is available for journeys. Full Force Context UITest (seed context → force → assert active UI) remains [#206](https://github.com/scottdensmore/ControlPlane/issues/206).
+**#244 closed:** the Force Context automation hook above is available for journeys. Full Force Context UITest (seed context → force → assert active UI) remains [#206](https://github.com/scottdensmore/controlplane/issues/206).
 
 ## UI test accessibility identifiers
 

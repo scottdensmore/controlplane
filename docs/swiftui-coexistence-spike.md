@@ -2,9 +2,9 @@
 
 Design-only. **No production SwiftUI Settings scene, MenuBarExtra, or UI rewrite in this change.** Discard any throwaway prototypes; rebuild under TDD in later slices.
 
-**Parent epics:** [#190](https://github.com/scottdensmore/ControlPlane/issues/190) (WWDC award), [#191](https://github.com/scottdensmore/ControlPlane/issues/191) (platform), [#192](https://github.com/scottdensmore/ControlPlane/issues/192) (SwiftUI shell).
+**Parent epics:** [#190](https://github.com/scottdensmore/controlplane/issues/190) (WWDC award), [#191](https://github.com/scottdensmore/controlplane/issues/191) (platform), [#192](https://github.com/scottdensmore/controlplane/issues/192) (SwiftUI shell).
 
-**Supersedes for the award track:** Wave 1 [`docs/menubarextra-spike.md`](menubarextra-spike.md) (**NO-SHIP** under [#116](https://github.com/scottdensmore/ControlPlane/issues/116) / [#138](https://github.com/scottdensmore/ControlPlane/issues/138)). That Wave 1 verdict remains correct for **SwiftUI `Scene`s** (`MenuBarExtra` / `Settings { }`). This spike reopens the product goal under a different coexistence shape: **AppKit owns lifecycle; SwiftUI owns views**.
+**Supersedes for the award track:** Wave 1 [`docs/menubarextra-spike.md`](menubarextra-spike.md) (**NO-SHIP** under [#116](https://github.com/scottdensmore/controlplane/issues/116) / [#138](https://github.com/scottdensmore/controlplane/issues/138)). That Wave 1 verdict remains correct for **SwiftUI `Scene`s** (`MenuBarExtra` / `Settings { }`). This spike reopens the product goal under a different coexistence shape: **AppKit owns lifecycle; SwiftUI owns views**.
 
 Related: [`docs/prefs-settings-style-spike.md`](prefs-settings-style-spike.md) (#100 AppKit Settings-style chrome), `Source/SwitchContextIntent.swift` (proven thin Swift beside ObjC).
 
@@ -210,37 +210,37 @@ Prefer **gating/retiring dead actions** and AppKit chrome that already works ove
 
 Implementers: rebuild under `tdd-slice`. Do **not** promote spike prototypes. Each slice is independently shippable onto `main`.
 
-### Platform foundation — epic [#191](https://github.com/scottdensmore/ControlPlane/issues/191)
+### Platform foundation — epic [#191](https://github.com/scottdensmore/controlplane/issues/191)
 
 | Order | Issue | Goal | Likely files | How red is proven | Out of scope |
 | :---: | :--- | :--- | :--- | :--- | :--- |
-| P0 | [#199](https://github.com/scottdensmore/ControlPlane/issues/199) (this doc) | Lock GO/NO-GO + slice order | `docs/swiftui-coexistence-spike.md` | Docs review / issue AC checklist | Any production UI |
-| P1 | [#200](https://github.com/scottdensmore/ControlPlane/issues/200) | Swift 6 language mode for app Swift | `project.pbxproj`, `SwitchContextIntent.swift` as needed | Build fails under Swift 6 until fixed; `ControlPlaneTests` still green | UI panes |
-| P2 | [#201](https://github.com/scottdensmore/ControlPlane/issues/201) | Dual-stack policy in `CONTRIBUTING.md` | `CONTRIBUTING.md` (pointers stay pointers; no `AGENTS.md`) | Docs assertion / review vs this spike | Implementing SwiftUI |
-| P3 | [#224](https://github.com/scottdensmore/ControlPlane/issues/224) | Shared Swift read models (Context / Evidence / Action lists) | New Swift types + ObjC façades; tests | Failing mapping tests → green bridge; ObjC matchers unchanged | Settings UI; matcher rewrites |
-| P4 | [#225](https://github.com/scottdensmore/ControlPlane/issues/225) / [#226](https://github.com/scottdensmore/ControlPlane/issues/226) | One evidence + one action Swift template | One source + one action + registry tests | Characterization red → Swift type registered | Mass migration |
-| P5 | [#227](https://github.com/scottdensmore/ControlPlane/issues/227) | Concurrency spike for timers | Spike doc only | Design AC | Production timer rewrite in spike PR |
+| P0 | [#199](https://github.com/scottdensmore/controlplane/issues/199) (this doc) | Lock GO/NO-GO + slice order | `docs/swiftui-coexistence-spike.md` | Docs review / issue AC checklist | Any production UI |
+| P1 | [#200](https://github.com/scottdensmore/controlplane/issues/200) | Swift 6 language mode for app Swift | `project.pbxproj`, `SwitchContextIntent.swift` as needed | Build fails under Swift 6 until fixed; `ControlPlaneTests` still green | UI panes |
+| P2 | [#201](https://github.com/scottdensmore/controlplane/issues/201) | Dual-stack policy in `CONTRIBUTING.md` | `CONTRIBUTING.md` (pointers stay pointers; no `AGENTS.md`) | Docs assertion / review vs this spike | Implementing SwiftUI |
+| P3 | [#224](https://github.com/scottdensmore/controlplane/issues/224) | Shared Swift read models (Context / Evidence / Action lists) | New Swift types + ObjC façades; tests | Failing mapping tests → green bridge; ObjC matchers unchanged | Settings UI; matcher rewrites |
+| P4 | [#225](https://github.com/scottdensmore/controlplane/issues/225) / [#226](https://github.com/scottdensmore/controlplane/issues/226) | One evidence + one action Swift template | One source + one action + registry tests | Characterization red → Swift type registered | Mass migration |
+| P5 | [#227](https://github.com/scottdensmore/controlplane/issues/227) | Concurrency spike for timers | Spike doc only | Design AC | Production timer rewrite in spike PR |
 
-### SwiftUI shell — epic [#192](https://github.com/scottdensmore/ControlPlane/issues/192)
+### SwiftUI shell — epic [#192](https://github.com/scottdensmore/controlplane/issues/192)
 
 Depends on P0; **strongly prefer P3 (#224) before panes that bind live lists**. General pane can start with narrow ObjC selectors if needed.
 
 | Order | Issue | Goal | Likely files | How red is proven | Out of scope |
 | :---: | :--- | :--- | :--- | :--- | :--- |
-| S0 | [#228](https://github.com/scottdensmore/ControlPlane/issues/228) | Mark MenuBarExtra **NO-GO**; optional Tahoe smoke note | Point at this doc; tiny TESTING note if needed | Issue AC / docs | Shipping MenuBarExtra |
-| S1 | [#203](https://github.com/scottdensmore/ControlPlane/issues/203) | SwiftUI **General** pane hosted in AppKit shell | New SwiftUI General view; `PrefsWindowController` / shell host; a11y ids preserved | UITest or characterization: General controls via same `prefs.general.*` ids; Debug+Release | Other panes; Settings scene |
-| S2 | [#229](https://github.com/scottdensmore/ControlPlane/issues/229)–[#234](https://github.com/scottdensmore/ControlPlane/issues/234) | Contexts → Evidence → Rules → Actions → Advanced → Diagnostics | One PR per pane | Per-pane UITest or unit+manual smoke; ids stable | Big-bang all panes |
-| S3 | [#235](https://github.com/scottdensmore/ControlPlane/issues/235) (+ [#263](https://github.com/scottdensmore/ControlPlane/issues/263)) | SwiftUI status **menu content** on `NSStatusItem` | `CPController` menu wiring; SwiftUI menu/popover content | Manual status smoke + #244 hook; `status.menu.*` preserved | `MenuBarExtra` |
-| S4 | [#237](https://github.com/scottdensmore/ControlPlane/issues/237) | Search / sidebar polish | Shell host evolution | UITest navigation still via ids | Rewriting evidence logic |
-| S5 | [#262](https://github.com/scottdensmore/ControlPlane/issues/262), [#236](https://github.com/scottdensmore/ControlPlane/issues/236), [#257](https://github.com/scottdensmore/ControlPlane/issues/257) | Rule sheets; retire unused XIBs; About polish | XIBs / About | Locale + VO checks | Helper topology |
+| S0 | [#228](https://github.com/scottdensmore/controlplane/issues/228) | Mark MenuBarExtra **NO-GO**; optional Tahoe smoke note | Point at this doc; tiny TESTING note if needed | Issue AC / docs | Shipping MenuBarExtra |
+| S1 | [#203](https://github.com/scottdensmore/controlplane/issues/203) | SwiftUI **General** pane hosted in AppKit shell | New SwiftUI General view; `PrefsWindowController` / shell host; a11y ids preserved | UITest or characterization: General controls via same `prefs.general.*` ids; Debug+Release | Other panes; Settings scene |
+| S2 | [#229](https://github.com/scottdensmore/controlplane/issues/229)–[#234](https://github.com/scottdensmore/controlplane/issues/234) | Contexts → Evidence → Rules → Actions → Advanced → Diagnostics | One PR per pane | Per-pane UITest or unit+manual smoke; ids stable | Big-bang all panes |
+| S3 | [#235](https://github.com/scottdensmore/controlplane/issues/235) (+ [#263](https://github.com/scottdensmore/controlplane/issues/263)) | SwiftUI status **menu content** on `NSStatusItem` | `CPController` menu wiring; SwiftUI menu/popover content | Manual status smoke + #244 hook; `status.menu.*` preserved | `MenuBarExtra` |
+| S4 | [#237](https://github.com/scottdensmore/controlplane/issues/237) | Search / sidebar polish | Shell host evolution | UITest navigation still via ids | Rewriting evidence logic |
+| S5 | [#262](https://github.com/scottdensmore/controlplane/issues/262), [#236](https://github.com/scottdensmore/controlplane/issues/236), [#257](https://github.com/scottdensmore/controlplane/issues/257) | Rule sheets; retire unused XIBs; About polish | XIBs / About | Locale + VO checks | Helper topology |
 
 ### Parallel (do not serialize)
 
 | Track | Issues | Note |
 | :--- | :--- | :--- |
-| UITest harness | [#202](https://github.com/scottdensmore/ControlPlane/issues/202) → [#244](https://github.com/scottdensmore/ControlPlane/issues/244) → journeys | Start early; Debug hooks > menu-bar clicks |
+| UITest harness | [#202](https://github.com/scottdensmore/controlplane/issues/202) → [#244](https://github.com/scottdensmore/controlplane/issues/244) → journeys | Start early; Debug hooks > menu-bar clicks |
 | Trust / a11y / product | #194 / #193 / #196 children | Consume SwiftUI shell; do not wait for full XIB retirement |
-| TESTING docs | [#255](https://github.com/scottdensmore/ControlPlane/issues/255) | After first SwiftUI pane lands |
+| TESTING docs | [#255](https://github.com/scottdensmore/controlplane/issues/255) | After first SwiftUI pane lands |
 
 ---
 
